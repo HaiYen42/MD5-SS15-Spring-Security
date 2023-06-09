@@ -12,6 +12,7 @@ public class HomeController {
     @GetMapping
     public String goHome(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        // Lớp Authentication --> dùng để lưu các thông tin của User
         System.out.println("authentication--->"+authentication);
         return "home/home";
     }

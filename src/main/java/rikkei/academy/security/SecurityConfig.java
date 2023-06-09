@@ -17,6 +17,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        //authorizeRequests-->Đã đăng nhập rồi
+        //antMatchers('/')--> được phép làm việc với ánh xạ nào (ánh xạ bên trong),
         http
                 .authorizeRequests().antMatchers("/auth/user").hasRole("USER")
                 .and().authorizeRequests().antMatchers("/auth/admin").hasRole("ADMIN")
